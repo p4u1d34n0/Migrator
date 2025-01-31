@@ -1,0 +1,46 @@
+{
+    "name": "pauldean/migrator",
+    "description": "PHP DB Migration Handler",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "DB\\": "src/DB/",
+            "DB\\Migrator\\": "src/migrator/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Deano",
+            "email": "paul.dean@oxfordop.co.uk"
+        }
+    ],
+    "extra": {
+        "migrations-path": "migrations",
+        "config-path": ""
+    },
+    "require": {}
+}
+
+
+migrator/
+    migrations/
+        20250131134744_newMigration.php
+    src/
+        data/
+            migrations.db
+        migrator/
+            Blueprint.php
+            Migration.php
+            Migrator.php
+            Schema.php
+        database.db
+        database.php
+        migrate.php
+    vendor/
+    composer.json
+    LICENCSE
+    README.md
+        
+
+
