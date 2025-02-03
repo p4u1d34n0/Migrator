@@ -1,6 +1,6 @@
 <?php
 
-namespace DB;
+namespace App\MigrationHandler;
 
 class Schema
 {
@@ -8,7 +8,7 @@ class Schema
     {
         // Instantiate a new blueprint for the table
         $blueprint = new Blueprint($tableName);
-        
+
         // Call the callback to define columns
         $callback($blueprint);
 
@@ -20,7 +20,7 @@ class Schema
     {
         // Instantiate a new blueprint for the table
         $blueprint = new Blueprint($tableName);
-        
+
         // Call the callback to define columns
         $callback($blueprint);
 
@@ -32,6 +32,6 @@ class Schema
     {
         // Drop the table if it exists
         $sql = "DROP TABLE IF EXISTS {$tableName}";
-        (new \DB\Migrator())->getDb()->exec($sql);
+        (new Migrator())->getDb()->exec($sql);
     }
 }

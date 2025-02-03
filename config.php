@@ -3,7 +3,7 @@
 return [
     'driver' => 'sqlite', // or 'mysql', 'pgsql', etc.
     'sqlite' => [
-        'database' => 'data/migrations.db',
+        'database' => 'database.db',
     ],
     'mysql' => [
         'host' => '127.0.0.1',

@@ -1,6 +1,6 @@
 <?php
 
-namespace DB;
+namespace App\MigrationHandler;
 
 class Blueprint
 {
@@ -33,11 +33,16 @@ class Blueprint
 
     public function create(): void
     {
+
+        if (empty($this->columns)) {
+            throw new \Exception(message: "Error: Cannot create table '{$this->tableName}' because no columns have been defined. Please add at least one column.");
+        }
+
         // Create the table by joining column definitions
         $columns = implode(", ", $this->columns);
         $sql = "CREATE TABLE IF NOT EXISTS {$this->tableName} ({$columns})";
-        
-        (new \DB\Migrator())->getDb()->exec($sql);
+
+        (new Migrator())->getDb()->exec($sql);
     }
 
     public function update(): void
@@ -45,7 +50,7 @@ class Blueprint
         // Add columns to the table
         $columns = implode(", ", $this->columns);
         $sql = "ALTER TABLE {$this->tableName} ADD COLUMN {$columns}";
-        
-        (new \DB\Migrator())->getDb()->exec($sql);
+
+        (new Migrator())->getDb()->exec($sql);
     }
 }

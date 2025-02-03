@@ -1,8 +1,8 @@
 <?php
 
-use DB\Migration;
-use DB\Schema;
-use DB\Blueprint;
+use App\MigrationHandler\Schema;
+use App\MigrationHandler\Blueprint;
+use App\MigrationHandler\Migration;
 
 return new class extends Migration
 {
@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('someTable', function (Blueprint $table) {
-            // $table->id();
+        Schema::create('test1', function (Blueprint $table) {
+            $table->id();
             // $table->timestamps();
         });
     }
@@ -22,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::drop('someTable');
+        Schema::drop('test1');
     }
 };

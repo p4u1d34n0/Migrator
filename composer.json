@@ -5,8 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "DB\\": "src/DB/",
-            "DB\\Migrator\\": "src/migrator/"
+            "App\\": "App"
         }
     },
     "authors": [
@@ -16,31 +15,8 @@
         }
     ],
     "extra": {
-        "migrations-path": "migrations",
-        "config-path": ""
+        "migrations-path": "./Migrations",
+        "config-path": "./config.php"
     },
     "require": {}
 }
-
-
-migrator/
-    migrations/
-        20250131134744_newMigration.php
-    src/
-        data/
-            migrations.db
-        migrator/
-            Blueprint.php
-            Migration.php
-            Migrator.php
-            Schema.php
-        database.db
-        database.php
-        migrate.php
-    vendor/
-    composer.json
-    LICENCSE
-    README.md
-        
-
-

@@ -1,6 +1,6 @@
 <?php
 
-namespace DB;
+namespace App\MigrationHandler;
 
 abstract class Migration
 {
