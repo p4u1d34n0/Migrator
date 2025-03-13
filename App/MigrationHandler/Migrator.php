@@ -99,7 +99,7 @@ class Migrator
     }
 
     // Determine the migration path (from composer.json or default)
-    private function getMigrationPath()
+    private function getMigrationPath(): mixed
     {
         // Check composer.json for migrations-path configuration
         $composerPath = $this->getComposerMigrationPath();
